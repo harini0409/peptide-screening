@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://YOUR-USERNAME.github.io/peptide-screening/</loc>
+    <lastmod>2025-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
+```
+
+4. **Replace "YOUR-USERNAME"** with your GitHub username
+5. Click **"Commit new file"**
+
+### **STEP 6: Submit Sitemap to Google**
+
+1. Go back to **Google Search Console**
+2. Click **"Sitemaps"** (left menu)
+3. Enter: `sitemap.xml`
+4. Click **"Submit"**
+
+✅ **Sitemap submitted!**
+
+---
+
+## **PART 4: Request Indexing**
+
+Tell Google to visit your site NOW!
+
+### **STEP 7: Request Indexing**
+
+1. In Google Search Console
+2. Click **"URL Inspection"** (top search bar)
+3. Paste your website URL
+4. Click **"Request Indexing"**
+5. Wait 1-2 minutes
+6. Click **"Request Indexing"** button
+
+✅ **Google will index your site within 1-7 days!**
+
+---
+
+## **PART 5: Get More Visibility**
+
+### **STEP 8: Create a robots.txt File**
+
+1. In GitHub, create new file: `robots.txt`
+2. Paste this:
+```
+User-agent: *
+Allow: /
+Sitemap: https://YOUR-USERNAME.github.io/peptide-screening/sitemap.xml
+```
+
+3. Replace YOUR-USERNAME
+4. Commit the file
+
+---
+
+### **STEP 9: Share on Social Media**
+
+Post on:
+
+**LinkedIn:**
+```
+🧬 Excited to share my new Peptide Virtual Screening Platform!
+
+✅ Free AI-powered peptide analysis
+✅ Real-time predictions
+✅ Research-grade accuracy
+
+Try it now: https://YOUR-URL
+
+#Bioinformatics #DrugDiscovery #MachineLearning #ComputationalBiology
+```
+
+**Twitter/X:**
+```
+🚀 Just launched a free AI-powered Peptide Screening Platform!
+
+Analyze peptide sequences in seconds
+Perfect for drug discovery research
+
+Try it: https://YOUR-URL
+
+#peptides #AI #drugdiscovery
+```
+
+**Reddit:**
+Post on: r/bioinformatics, r/computational_biology, r/datascience
+
+---
+
+### **STEP 10: List on Directories**
+
+Submit your tool to:
+
+1. **Hugging Face Community**
+   - Post in Hugging Face forums
+   
+2. **Product Hunt**
+   - https://www.producthunt.com/
+
+3. **BioTools**
+   - https://bio.tools/
+
+4. **AlternativeTo**
+   - https://alternativeto.net/
+
+---
+
+## **PART 6: Get a Custom Domain (Optional but Recommended)**
+
+Instead of `username.github.io/peptide-screening`, get:
+`peptidescreening.com` or `peptide-screening.org`
+
+### **STEP 11: Buy a Domain**
+
+1. Go to **Namecheap.com** or **Google Domains**
+2. Search for: `peptidescreening` or `peptide-screening`
+3. Buy the domain ($10-15/year)
+
+### **STEP 12: Connect to GitHub Pages**
+
+1. In your GitHub repository settings
+2. Go to **"Pages"**
+3. Under **"Custom domain"**, enter your domain
+4. Save
+
+5. In your domain registrar (Namecheap), add DNS records:
+```
+   Type: A
+   Host: @
+   Value: 185.199.108.153
+   
+   Type: A
+   Host: @
+   Value: 185.199.109.153
+   
+   Type: A
+   Host: @
+   Value: 185.199.110.153
+   
+   Type: A
+   Host: @
+   Value: 185.199.111.153
+   
+   Type: CNAME
+   Host: www
+   Value: YOUR-USERNAME.github.io
