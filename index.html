@@ -699,30 +699,48 @@
 
             showLoading();
 
-            try {
-                // Your Hugging Face Space URL
-                const spaceUrl = 'https://harini0409-peptide-virtualscreening.hf.space';
-                const response = await fetch(`${spaceUrl}/api/predict`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        data: [peptides]
-                    })
-                });
+            // Try multiple endpoint formats
+            const endpoints = [
+                'https://harini0409-peptide-virtualscreening.hf.space/api/predict',
+                'https://harini0409-peptide-virtualscreening.hf.space/run/predict',
+                'https://hf.space/embed/harini0409/peptide_virtualscreening/api/predict'
+            ];
 
-                if (!response.ok) {
-                    throw new Error(`Server returned ${response.status}: ${response.statusText}`);
+            let success = false;
+            let lastError = null;
+
+            for (let endpoint of endpoints) {
+                try {
+                    console.log('Trying endpoint:', endpoint);
+                    
+                    const response = await fetch(endpoint, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            data: [peptides]
+                        })
+                    });
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        processResults(data, peptides);
+                        success = true;
+                        break;
+                    } else {
+                        lastError = `Server returned ${response.status}`;
+                    }
+                } catch (error) {
+                    console.log('Endpoint failed:', endpoint, error);
+                    lastError = error.message;
+                    continue;
                 }
+            }
 
-                const data = await response.json();
-                processResults(data, peptides);
-
-            } catch (error) {
+            if (!success) {
                 hideLoading();
-                showError(`Failed to connect to analysis server: ${error.message}. Please try again later.`);
-                console.error('Analysis error:', error);
+                showError(`Failed to connect to analysis server. Please ensure your Hugging Face Space is running at: https://huggingface.co/spaces/harini0409/peptide_virtualscreening. Error: ${lastError}`);
             }
         }
 
